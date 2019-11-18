@@ -1,0 +1,41 @@
+﻿@model List<ClubPortal.Models.Club>
+
+<table style="margin-top:20px;">
+    <tr>
+        <th class="col-xs-2">
+            ID
+        </th>
+        <th class="col-xs-2">
+            Name
+        </th>
+        <th class="col-xs-2">
+            Country
+        </th>
+        <th class="col-xs-2">
+            Eliminated
+        </th>
+        <th class="col-xs-2">
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col-xs-2">
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td class="col-xs-2">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="col-xs-2">
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td class="col-xs-2">
+                @Html.DisplayFor(modelItem => item.Eliminated)
+            </td>
+            <td class="col-xs-2">
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
