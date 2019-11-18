@@ -15,12 +15,14 @@ namespace ClubPortal.Controllers
     {
         private ClubContext db = new ClubContext();
 
-        // GET: Clubs
+        // GET: All Clubs
         public ActionResult Index()
         {
             var clubs = db.Clubs.ToList();
             return View(clubs);
         }
+
+        //Load Details page with the selected Club.
 
         public ActionResult Details(int? id)
         {
@@ -34,7 +36,9 @@ namespace ClubPortal.Controllers
             return View(club);
         }
 
-        [HttpPost]
+        //Save any edits made to the Club.
+
+        [HttpPost]                                              
         public ActionResult Details(Club club)
         {
             var existingClub = db.Clubs.Where(c => c.ID == club.ID).FirstOrDefault();

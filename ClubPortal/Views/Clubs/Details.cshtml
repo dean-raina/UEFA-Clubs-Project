@@ -1,9 +1,14 @@
 ﻿@model  ClubPortal.Models.Club
 @{
+
+    //Create Image and Club Page URLS using their IDs.
+
     string clubURL = "https://www.uefa.com/teamsandplayers/teams/club=" + Model.ID + "/profile/index.html";
     string clubImgURL = "http://img.uefa.com/imgml/TP/teams/logos/70x70/" + Model.ID + ".png";
 
     #region Country Drop Down
+
+    // Create SelectList Object containing all countries.
 
     var listItems = new List<SelectListItem> {
 
